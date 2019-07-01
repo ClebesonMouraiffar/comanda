@@ -24,7 +24,7 @@ export default withFormik({
 
   handleSubmit: (values, { setSubmitting, setErrors }) => {
     console.log(values),
-      fetch('http://10.1.1.23:8000/grupo/add', {
+      fetch('http://10.1.1.23:8000/mesa/add', {
         method: 'POST',
         headers: {
           Accept: 'application/json',
@@ -38,7 +38,7 @@ export default withFormik({
 })(Form);
 
 withFormik.navigationOptions = {
-  title: "Adicionar Grupo"
+  title: "Adicionar Mesa"
 };
 
 
