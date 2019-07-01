@@ -5,6 +5,7 @@ import { withFormik } from 'formik';
 
 const Form = (props) => (
   <View style={styles.container}>
+    <Text style={styles.title}>DESCRIÇÃO</Text>
     <TextInput
       style={styles.item}
       value={props.values.descricao}
@@ -56,5 +57,13 @@ const styles = StyleSheet.create({
     height: 40,
     borderColor: 'gray',
     borderWidth: 1
+  },
+  title: {
+    alignSelf: 'stretch',
+    margin: 10,
+    alignItems: 'flex-start',
+    justifyContent: 'flex-start',
+    fontFamily: 'Verdana',
+    fontSize: 18
   },
 });
