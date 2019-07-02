@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { ActivityIndicator, FlatList, StyleSheet, Text, View, Button} from 'react-native';
+import { ActivityIndicator, FlatList, StyleSheet, Text, View, Button, Alert} from 'react-native';
 
 
 export default class PgItens extends Component {
@@ -9,7 +9,7 @@ export default class PgItens extends Component {
   }
 
 componentDidMount() {
-  return fetch('http://10.1.1.23:8000/item/list')
+  return fetch('http://192.168.11.9:8000/item/list')
     .then((response) => response.json())
     .then((responseJson) => {
 
@@ -25,7 +25,7 @@ componentDidMount() {
 }
 
  remove(id) {
-  return fetch(`http://10.1.1.23:8000/item/delete/${id}`, {method: 'DELETE'})
+  return fetch(`http://192.168.11.9:8000/item/delete/${id}`, {method: 'DELETE'})
   .then((response)=> response.json()).then((reponseJson)=>{
     Alert.alert("Dados Deletados")
   })
@@ -65,7 +65,7 @@ render() {
           </Text>
           <Button
             title="Editar"
-            onPress={() => this.props.navigation.navigate('FormMesa',(item.id))}
+            onPress={() => this.props.navigation.navigate('FormMesa')}
           />
           <Button
             title="Excluir"

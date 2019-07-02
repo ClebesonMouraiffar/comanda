@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { ActivityIndicator, FlatList, StyleSheet, Text, View, Button } from 'react-native';
+import { ActivityIndicator, FlatList, StyleSheet, Text, View, Button, Alert } from 'react-native';
 
 
 export default class PgMesas extends Component {constructor(props) {
@@ -8,7 +8,7 @@ export default class PgMesas extends Component {constructor(props) {
 }
 
 componentDidMount() {
-  return fetch('http://10.1.1.23:8000/mesa/list')
+  return fetch('http://192.168.11.9:8000/mesa/list')
     .then((response) => response.json())
     .then((responseJson) => {
 
@@ -24,7 +24,7 @@ componentDidMount() {
 }
 
  remove(id) {
-  return fetch(`http://10.1.1.23:8000/mesa/delete/${id}`, {method: 'DELETE'})
+  return fetch(`http://192.168.11.9:8000/mesa/delete/${id}`, {method: 'DELETE'})
   .then((response)=> response.json()).then((reponseJson)=>{
     Alert.alert("Dados Deletados")
   })

@@ -9,7 +9,7 @@ export default class PgGrupos extends Component {
   }
 
   componentDidMount() {
-    return fetch('http://10.1.1.23:8000/grupo/list')
+    return fetch('http://192.168.11.9:8000/grupo/list')
       .then((response) => response.json())
       .then((responseJson) => {
 
@@ -27,7 +27,7 @@ export default class PgGrupos extends Component {
   }
 
    remove(id) {
-    return fetch(`http://10.1.1.23:8000/grupo/delete/${id}`, {method: 'DELETE'})
+    return fetch(`http://192.168.11.9:8000/grupo/delete/${id}`, {method: 'DELETE'})
     .then((response)=> response.json()).then((reponseJson)=>{
       Alert.alert("Dados Deletados")
     })

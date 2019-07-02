@@ -26,15 +26,15 @@ const Form = (props) => (
       onChangeText={text => props.setFieldValue('valor', text)}
     />
     <Text style={styles.title}>GRUPO</Text>
-    
+
     <Picker
-      // selectedValue={this.state.language}
+      //selectedValue={this.state.language}
       style={styles.item}
     //onValueChange={(itemValue, itemIndex) =>
     //this.setState({ language: itemValue })
     //}
     >
-      
+
       <Picker.Item label="Java" value="java" />
       <Picker.Item label="JavaScript" value="js" />
     </Picker>
@@ -49,9 +49,9 @@ const Form = (props) => (
 export default withFormik({
   mapPropsToValues: () => ({ descricao: '' }),
 
-  handleSubmit: (values, { setSubmitting, setErrors }) => {
+  handleSubmit: (values) => {
     console.log(values),
-      fetch('http://10.1.1.23:8000/item/add', {
+      fetch('http://192.168.11.9:8000/item/add', {
         method: 'POST',
         headers: {
           Accept: 'application/json',

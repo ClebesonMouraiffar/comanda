@@ -8,7 +8,7 @@ export default class PgHome extends Component {
   }
 
   componentDidMount() {
-    return fetch('http://10.1.1.23:8000/comanda/list')
+    return fetch('http://192.168.11.9:8000/comanda/list')
       .then((response) => response.json())
       .then((responseJson) => {
 

@@ -25,7 +25,7 @@ export default withFormik({
 
   handleSubmit: (values, { setSubmitting, setErrors }) => {
     console.log(values),
-      fetch('http://10.1.1.23:8000/grupo/add', {
+      fetch('http://192.168.11.9:8000/grupo/add', {
         method: 'POST',
         headers: {
           Accept: 'application/json',

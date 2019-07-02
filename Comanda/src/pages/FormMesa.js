@@ -25,7 +25,7 @@ export default withFormik({
 
   handleSubmit: (values, { setSubmitting, setErrors }) => {
     console.log(values),
-      fetch('http://10.1.1.23:8000/mesa/add', {
+      fetch('http://192.168.11.9:8000/mesa/add', {
         method: 'POST',
         headers: {
           Accept: 'application/json',
@@ -33,6 +33,7 @@ export default withFormik({
         },
         body: JSON.stringify(values),
       }).then((response) => response.json()).then((reponseJson) => {
+        //this.props.navigation.push('Mesas')
         Alert.alert("Dados Inseridos com Sucesso")
       })
   }
